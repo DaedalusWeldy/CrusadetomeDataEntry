@@ -1,0 +1,4 @@
+venv/
+scrap/
+__pycache__/
+scrap_code.txt
