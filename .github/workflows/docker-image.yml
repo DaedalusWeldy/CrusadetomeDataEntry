@@ -49,4 +49,4 @@ jobs:
           # context: "{{defaultContext}}:src"
           push: true
           # push: ${{ github.event_name != 'pull_request' }} # Don't push on PR
-          tags: ghcr.io/daedalusweldy/crusadetomedataentry:test
+          tags: ghcr.io/daedalusweldy/crusadetomedataentry:${{ github.ref_name }}
