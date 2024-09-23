@@ -53,13 +53,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           # context: "{{defaultContext}}:src"
-<<<<<<< HEAD
           # push: true
           push: ${{ github.event_name != 'pull_request' }} # Don't push on PR
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           labels: ${{ steps.meta.outputs.labels  }}
-=======
-          push: true
-          # push: ${{ github.event_name != 'pull_request' }} # Don't push on PR
-          tags: ghcr.io/daedalusweldy/crusadetomedataentry:${{ github.ref_name }}
->>>>>>> 96ffa1317f7a4470b2114627ce3711ae4d7d4226
