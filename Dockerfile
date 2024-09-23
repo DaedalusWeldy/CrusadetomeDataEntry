@@ -2,6 +2,7 @@ FROM python:3.12-slim
 WORKDIR /app
 
 LABEL "title" = "Crusadetome DataEntry Tool"
+LABEL "lowercase_repo" = "daedalusweldy/crusadetomedataentry"
 LABEL "version" = "1.0.0"
 LABEL "description" = "Data Entry tool for converting Warhammer 40k unit data into JSON format."
 
