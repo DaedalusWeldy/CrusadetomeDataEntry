@@ -13,6 +13,8 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+  
+  LOWERCASE_IMAGE: echo 'ghcr.io/${{ github.repository }}' | tr '[:upper:]' '[:lower:]'
 
 
 jobs:
@@ -39,7 +41,7 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
+        
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v5
@@ -55,5 +57,5 @@ jobs:
           # context: "{{defaultContext}}:src"
           # push: true
           push: ${{ github.event_name != 'pull_request' }} # Don't push on PR
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.LOWERCASE_IMAGE }}:latest
           labels: ${{ steps.meta.outputs.labels  }}
