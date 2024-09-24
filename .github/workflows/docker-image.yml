@@ -13,9 +13,6 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
-  
-  LOWERCASE_IMAGE: echo 'ghcr.io/${{ github.repository }}' | tr '[:upper:]' '[:lower:]'
-
 
 jobs:
   build:
@@ -57,5 +54,5 @@ jobs:
           # context: "{{defaultContext}}:src"
           # push: true
           push: ${{ github.event_name != 'pull_request' }} # Don't push on PR
-          tags: ${{ env.LOWERCASE_IMAGE }}:latest
+          tags: ${{ env.REGISTRY }}/crusadetome_data_entry:latest
           labels: ${{ steps.meta.outputs.labels  }}
