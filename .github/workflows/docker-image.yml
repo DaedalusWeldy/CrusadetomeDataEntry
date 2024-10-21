@@ -12,7 +12,8 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
+  # hardcoding due to unrecoverable error in Docker image process
+  IMAGE_NAME: DaedalusWeldy/crusadetomedataentry
 
 jobs:
   build:
