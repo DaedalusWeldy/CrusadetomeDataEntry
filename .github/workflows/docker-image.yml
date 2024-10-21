@@ -54,5 +54,5 @@ jobs:
           # context: "{{defaultContext}}:src"
           # push: true
           push: ${{ github.event_name != 'pull_request' }} # Don't push on PR
-          tags: ${{ env.REGISTRY }}/crusadetomedataentry:latest
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           labels: ${{ steps.meta.outputs.labels  }}
